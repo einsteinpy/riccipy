@@ -1,8 +1,7 @@
-from sympy import *
-
 from riccipy.metric import *
 from riccipy.partial import *
 from riccipy.tensor import *
+from sympy import *
 
 init_printing()
 
