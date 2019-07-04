@@ -65,7 +65,7 @@ class Metric(AbstractTensor, TensorIndexType):
             **kwargs,
         )
         obj = AbstractTensor.__new__(cls, obj, array)
-        obj.metric = Tensor(obj.name, array, obj, comm="metric", covar=(-1, -1))
+        obj.metric = Tensor(obj.name, array, obj, covar=(-1, -1))
         obj.coords = tuple(coords)
         ReplacementManager[obj] = array
         return obj

@@ -3,9 +3,9 @@ from collections import defaultdict
 from sympy import Array, simplify, symbols
 from sympy.core.compatibility import string_types
 from sympy.tensor.array import permutedims, tensorcontraction, tensorproduct
+from sympy.tensor.tensor import TensMul
+from sympy.tensor.tensor import Tensor as SympyTensor
 from sympy.tensor.tensor import (
-    TensMul,
-    Tensor as SympyTensor,
     TensorHead,
     TensorIndex,
     TensorManager,
@@ -326,8 +326,6 @@ def indices(s, metric, is_up=True):
 
 
 # metric tensors and general tensors commute with each other and themselves.
-TensorManager.set_comm("general", "metric", 0)
-TensorManager.set_comm("metric", "metric", 0)
 TensorManager.set_comm("general", "general", 0)
 # partial derivatives only commute with themselves.
 TensorManager.set_comm("partial", "partial", 0)
