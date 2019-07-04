@@ -29,7 +29,7 @@ class _ReplacementManager(dict):
     def get_key(self, tensor):
         item = tensor if (tensor.is_TensorHead or tensor.is_Metric) else tensor.args[0]
         for key in self.keys():
-            if (key == item) or (key.args[0] == item):
+            if (key is item) or (key.args[0] is item):
                 return key
         return None
 
