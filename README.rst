@@ -1,6 +1,6 @@
 .. riccipy
 
-.. image:: https://einsteinpy.org/img/logo.png
+.. image:: https://blog.einsteinpy.org/img/logo.png
    :target: https://einsteinpy.org/
    :alt: EinsteinPy logo
    :width: 675px
