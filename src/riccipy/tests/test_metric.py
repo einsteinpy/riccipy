@@ -33,6 +33,20 @@ def test_SpacetimeMetric():
     assert array1 == -1 * array2
 
 
+def test_Metric_density():
+    (coords, t, r, th, ph, schw, g, mu, nu) = _generate_schwarzschild()
+    res1 = g.density()
+    assert res1.equals(r ** 2 * abs(sin(th)))
+    res2 = g.density(-1)
+    assert res2.equals(1 / res1)
+
+
+def test_Metric_determinant():
+    (coords, t, r, th, ph, schw, g, mu, nu) = _generate_schwarzschild()
+    res = g.determinant
+    assert res.equals(-r ** 4 * sin(th) ** 2)
+
+
 def test_Metric_christoffel():
     (coords, t, r, th, ph, schw, g, mu, nu) = _generate_schwarzschild()
     gamma = g.christoffel.simplify()
