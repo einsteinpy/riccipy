@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-from sympy import Array, ones, tensorproduct, zeros
+from sympy import Array, Rational, Pow, ones, tensorproduct, zeros
 from sympy.tensor.tensor import TensorIndexType
 
 from .partial import PartialDerivative
@@ -78,6 +78,13 @@ class Metric(AbstractTensor, TensorIndexType):
     def __call__(self, *args):
         return self.metric(*args)
 
+    def density(self, weight=S.One):
+        return Pow(abs(self.determinant), Rational(weight, 2))
+
+    @property
+    def determinant(self):
+        return self.as_matrix().det()
+
     @property
     def partial(self):
         return PartialDerivative(self)
@@ -95,7 +102,7 @@ class Metric(AbstractTensor, TensorIndexType):
             d = self.partial
             g = self.metric
             gamma = (
-                (1 / 2)
+                Rational(1, 2)
                 * g(si, rh)
                 * (d(-mu) * g(-nu, -rh) + d(-nu) * g(-rh, -mu) - d(-rh) * g(-mu, -nu))
             )
@@ -180,8 +187,8 @@ class Metric(AbstractTensor, TensorIndexType):
                     "C", res, self, symmetry=[[2, 2]], covar=(1, -1, -1, -1)
                 )
                 return self._weyl
-            c1 = 1 / (n - 2)
-            c2 = 1 / (n - 2) / (n - 1)
+            c1 = Rational(1, n - 2)
+            c2 = Rational(1, (n - 2) * (n - 1))
             mu, nu, si, rh = indices("mu nu sigma rho", self)
             R = self.riemann
             RR = self.ricci_tensor
@@ -216,7 +223,7 @@ class Metric(AbstractTensor, TensorIndexType):
             g = self.metric
             R = self.ricci_tensor
             RR = self.ricci_scalar
-            res = expand_tensor(R(-mu, -nu) - (1 / 2) * RR * g(-mu, -nu))
+            res = expand_tensor(R(-mu, -nu) - Rational(1, 2) * RR * g(-mu, -nu))
             self._einstein = Tensor("G", res, self, covar=(-1, -1))
         return self._einstein
 
