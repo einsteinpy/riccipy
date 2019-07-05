@@ -3,6 +3,7 @@ from itertools import starmap
 from types import FunctionType
 
 import numpy as np
+
 from sympy import Array, lambdify
 from sympy.tensor.tensor import TensExpr
 
