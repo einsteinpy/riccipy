@@ -78,7 +78,7 @@ jobs:
           name: run coverage
           command: |
             . venv/bin/activate
-            MPLBACKEND=Agg NUMBA_DISABLE_JIT=1 pytest --cov  # Test against sources
+            MPLBACKEND=Agg NUMBA_DISABLE_JIT=1 pytest --cov=riccipy ./src/riccipy/tests  # Test against sources
       - run:
           name: publish coverage
           command: |
