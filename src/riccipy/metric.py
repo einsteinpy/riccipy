@@ -256,3 +256,12 @@ class SpacetimeMetric(Metric):
         sig = sign * ones(1, self.dim)
         sig[0] *= -1
         return tuple(sig)
+
+def load_metric(symbol, name):
+    import os
+    from sympy import diag, symbols, sin, sinh, cos, cosh, exp
+    base = os.path.join(os.path.dirname(__file__), './metrics/')
+    variables = dict(globals(), **locals())
+    with open(os.path.join(base, name + '.py'), 'r') as file:
+        exec(file.read(), variables)
+        return SpacetimeMetric(symbol, variables['_coords'], variables['_metric'], timelike=False)
