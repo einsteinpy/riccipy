@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from sympy import Array, simplify, symbols
+from sympy import Array, simplify, symbols, preorder_traversal
 from sympy.core.compatibility import string_types
 from sympy.tensor.array import permutedims, tensorcontraction, tensorproduct
 from sympy.tensor.tensor import (
@@ -12,54 +12,6 @@ from sympy.tensor.tensor import (
     TensorType,
     tensorsymmetry,
 )
-
-
-class _ReplacementManager(dict):
-    """
-    Dictionary for keeping track of the arrays for the symbolically defined
-    tensors.
-
-    Array calculations for tensors is done in Sympy with the
-    ~TensExpr.replace_with_arrays method which takes a dictionary as an argument.
-    Thus, this class provides a convenient interface for bridging between
-    EinsteinPy's interface and Sympy's.
-
-    """
-
-    def get_key(self, tensor):
-        item = tensor if (tensor.is_TensorHead or tensor.is_Metric) else tensor.args[0]
-        for key in self.keys():
-            if (key == item) or (key.args[0] == item):
-                return key
-        return None
-
-    def get_value(self, tensor):
-        key = self.get_key(tensor)
-        if key is None:
-            raise KeyError(str(tensor))
-        return self[key]
-
-    def remove(self, tensor):
-        key = self.get_key(tensor)
-        if key is not None:
-            self.pop(key)
-
-    def replace(self, tensor, array):
-        key = self.get_key(tensor)
-        if key is None:
-            raise KeyError(str(tensor))
-        self.update({key: array})
-
-    def has(self, tensor):
-        key = self.get_key(tensor)
-        return True if key is not None else False
-
-    def __setitem__(self, tensor, array):
-        if not self.has(tensor):
-            self.update({tensor: array})
-
-
-ReplacementManager = _ReplacementManager()
 
 
 class AbstractTensor(object):
@@ -77,6 +29,7 @@ class AbstractTensor(object):
 
     def __new__(cls, obj, matrix):
         obj._array = matrix
+        obj._repl = dict()
         return obj
 
     def as_matrix(self):
@@ -203,7 +156,7 @@ class Tensor(AbstractTensor, TensorHead):
         count = defaultdict(int)  # type: dict
 
         def dummy_fmt_gen(idxtype):
-            # generate a generic index for the entry in ReplacementManager.
+            # generate a generic index for the entry in replacement dictionary.
             fmt = idxtype.dummy_fmt
             n = count[idxtype]
             count[idxtype] += 1
@@ -219,7 +172,7 @@ class Tensor(AbstractTensor, TensorHead):
         idxs = [
             idx if covar[pos] > 0 else -idx for pos, idx in enumerate(idx_generator)
         ]
-        ReplacementManager[obj(*idxs)] = array
+        obj._repl[obj(*idxs)] = array
         return obj
 
     def __repr__(self):
@@ -271,12 +224,12 @@ class Tensor(AbstractTensor, TensorHead):
     def simplify(self):
         """
         Replace the stored array associated with this tensor with a simplified
-        version. This method also replaces the entry in ReplacementManager.
+        version. This method also replaces the entry in the replacement dictionary.
 
         """
         array = simplify(self.as_array())
         self._array = array
-        ReplacementManager.replace(self, array)
+        self._repl.update({self: array})
         return array
 
 
@@ -304,9 +257,17 @@ def expand_tensor(expr, idxs=None):
         Indices that encode the covariance and contravariance of the result.
 
     """
+    repl = dict()
+
+    for arg in preorder_traversal(expr):
+        if isinstance(arg, AbstractTensor):
+            repl.update(arg._repl)
+            for metric in arg.index_types:
+                repl.update(metric._repl)
+
     if idxs is None:
         idxs = TensMul(expr).get_free_indices()
-    return expr.replace_with_arrays(ReplacementManager, idxs)
+    return expr.replace_with_arrays(repl, idxs)
 
 
 def indices(s, metric, is_up=True):

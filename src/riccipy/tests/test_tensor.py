@@ -103,10 +103,6 @@ def test_IndexedTensor():
     assert isinstance(T(mu), IndexedTensor)
 
 
-def test_ReplacementManager():
-    pass
-
-
 def test_expand_tensor():
     (coords, t, r, th, ph, mink, eta, mu, nu) = _generate_minkowski()
     E1, E2, E3, B1, B2, B3 = symbols("E_1:4 B_1:4", real=True)

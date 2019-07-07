@@ -4,7 +4,7 @@ from sympy import Array, Pow, Rational, S, ones, tensorproduct, zeros
 from sympy.tensor.tensor import TensorIndexType
 
 from .partial import PartialDerivative
-from .tensor import AbstractTensor, ReplacementManager, Tensor, expand_tensor, indices
+from .tensor import AbstractTensor, Tensor, expand_tensor, indices
 
 
 class Metric(AbstractTensor, TensorIndexType):
@@ -67,7 +67,7 @@ class Metric(AbstractTensor, TensorIndexType):
         obj = AbstractTensor.__new__(cls, obj, array)
         obj.metric = Tensor(obj.name, array, obj, covar=(-1, -1))
         obj.coords = tuple(coords)
-        ReplacementManager[obj] = array
+        obj._repl[obj] = array
         return obj
 
     def __getattr__(self, attr):
