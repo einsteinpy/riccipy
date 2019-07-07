@@ -1,7 +1,8 @@
-from riccipy.metric import *
-from riccipy.tensor import *
 from sympy import Array, diag, eye, simplify, sin, symbols
 from sympy.tensor.tensor import TensExpr, TensMul
+
+from riccipy.metric import *
+from riccipy.tensor import *
 
 
 def _generate_simple():

@@ -1,7 +1,8 @@
+from sympy import Expr, diag, sin, symbols, zeros
+
 from riccipy.metric import *
 from riccipy.partial import *
 from riccipy.tensor import *
-from sympy import Expr, diag, sin, symbols, zeros
 
 
 def _generate_schwarzschild():
