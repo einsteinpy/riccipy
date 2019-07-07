@@ -1,4 +1,4 @@
-# Einstein's static universe. Euclidean coordinates
+# Einstein's static universe. Cartesian coordinates
 _coords = symbols('t x y z', real=True)
 _vars = symbols('K', constant=True)
 _funs = ()

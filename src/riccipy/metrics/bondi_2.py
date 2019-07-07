@@ -6,3 +6,4 @@ r, v, th, ph = _coords
 C, M = _funs
 _metric = diag(0,-C(t,v)**2*(1-2*M(t,v)/t),t**2,t**2*sin(th)**2)
 _metric[0,1] = _metric[1,0] = -C(r,v)
+del r, v, th, ph, C, M
