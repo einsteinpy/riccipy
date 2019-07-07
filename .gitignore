@@ -71,3 +71,7 @@ TAGS
 
 # default pytest cache directory
 */.pytest_cache
+.pytest_cache/
+
+#Tox
+.tox
