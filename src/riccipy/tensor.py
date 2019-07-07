@@ -3,9 +3,9 @@ from collections import defaultdict
 from sympy import Array, simplify, symbols
 from sympy.core.compatibility import string_types
 from sympy.tensor.array import permutedims, tensorcontraction, tensorproduct
-from sympy.tensor.tensor import TensMul
-from sympy.tensor.tensor import Tensor as SympyTensor
 from sympy.tensor.tensor import (
+    TensMul,
+    Tensor as SympyTensor,
     TensorHead,
     TensorIndex,
     TensorManager,
