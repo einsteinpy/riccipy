@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from sympy import Array, simplify, symbols, preorder_traversal
+from sympy import Array, preorder_traversal, simplify, symbols
 from sympy.core.compatibility import string_types
 from sympy.tensor.array import permutedims, tensorcontraction, tensorproduct
 from sympy.tensor.tensor import (
