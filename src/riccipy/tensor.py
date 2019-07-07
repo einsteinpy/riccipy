@@ -229,7 +229,8 @@ class Tensor(AbstractTensor, TensorHead):
         """
         array = simplify(self.as_array())
         self._array = array
-        self._repl.update({self: array})
+        for key in self._repl:
+            self._repl[key] = array
         return array
 
 
