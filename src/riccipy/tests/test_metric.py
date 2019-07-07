@@ -1,4 +1,4 @@
-from sympy import Expr, diag, sin, symbols, zeros
+from sympy import Expr, diag, eye, sin, symbols, tensorproduct, zeros
 
 from riccipy.metric import *
 from riccipy.partial import *
@@ -96,6 +96,11 @@ def test_Metric_einstein():
 
 
 def test_Metric_weyl():
+    x, y, z = symbols("x y z", real=True)
+    I = Metric("I", (x, y, z), eye(3))
+    zero_tensor = tensorproduct(zeros(3, 3), zeros(3, 3))
+    assert I.weyl.as_array() == zero_tensor
+
     (coords, t, r, th, ph, schw, g, mu, nu) = _generate_schwarzschild()
     rh, si = indices("rho sigma", g)
     C = g.weyl

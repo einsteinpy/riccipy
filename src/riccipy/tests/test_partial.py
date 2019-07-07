@@ -15,13 +15,17 @@ def _generate_schwarzschild():
 
 
 def test_DiffOperator():
-    r = Symbol("r")
-    dr = DiffOperator(r)
-    expr = dr * (1 - 1 / r)
-    assert expr == 1 / r ** 2
-    expr = (1 - 1 / r) * dr
+    x, y = symbols("x y")
+    dx = DiffOperator(x)
+    assert (0 * dx) == 0
+    expr = dx * (1 - 1 / x)
+    assert expr == 1 / x ** 2
+    expr = (1 - 1 / x) * dx
     assert isinstance(expr, DiffOperator)
-    assert (expr * (r ** 3 / 3)).equals(r * (r - 1))
+    assert (expr * (x ** 3 / 3)).equals(x * (x - 1))
+    dy = DiffOperator(y)
+    res = dx * dy
+    assert res.args == (x, y)
 
 
 def test_PartialDerivative():
