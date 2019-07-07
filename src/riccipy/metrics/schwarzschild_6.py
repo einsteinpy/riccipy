@@ -1,4 +1,5 @@
 # Schwarzschild exterior metric in Israel coordinates
+# Schwarzschild exterior metric  in Israel coordinates
 from sympy import Rational, diag, sin, symbols
 
 coords = symbols("u w theta phi", real=True)
