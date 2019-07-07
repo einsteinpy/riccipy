@@ -1,9 +1,11 @@
 # Beckers, Sinzinkayo, and Demaret solution
-_coords = symbols('t x y z', real=True)
-_vars = symbols('m', constant=True)
-_funs = ()
-t, x, y, z = _coords
-m = _vars
-expr = x**(2*m)
-_metric = diag(-expr, expr, expr, expr)
+from sympy import diag, symbols
+
+coords = symbols("t x y z", real=True)
+variables = symbols("m", constant=True)
+functions = ()
+t, x, y, z = coords
+m = variables
+expr = x ** (2 * m)
+metric = diag(-expr, expr, expr, expr)
 del expr, t, x, y, z, m

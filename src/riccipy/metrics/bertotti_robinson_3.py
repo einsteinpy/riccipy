@@ -1,8 +1,10 @@
 # The Bertotti-Robinson solution
-_coords = symbols('t x theta phi', real=True)
-_vars = symbols('k', constant=True)
-_funs = ()
-t, x, th, ph = _coords
-k = _vars
-_metric = diag(-k**2*sinh(x)**2, k**2, k**2, k**2*sin(th)**2)
+from sympy import diag, sin, sinh, symbols
+
+coords = symbols("t x theta phi", real=True)
+variables = symbols("k", constant=True)
+functions = ()
+t, x, th, ph = coords
+k = variables
+metric = diag(-k ** 2 * sinh(x) ** 2, k ** 2, k ** 2, k ** 2 * sin(th) ** 2)
 del t, x, th, ph, k

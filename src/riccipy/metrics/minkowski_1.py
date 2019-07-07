@@ -1,5 +1,7 @@
 # Minkowski space in Cartesian coordinates
-_coords = symbols('t x y z', real=True)
-_vars = ()
-_funs = ()
-_metric = diag(-1, 1, 1, 1)
+from sympy import diag, symbols
+
+coords = symbols("t x y z", real=True)
+variables = ()
+functions = ()
+metric = diag(-1, 1, 1, 1)
