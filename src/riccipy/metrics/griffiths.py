@@ -26,4 +26,3 @@ metric[0, 3] = metric[3, 0] = -1
 metric[1, 2] = metric[2, 1] = -a * (2 * u - y)
 metric[1, 3] = metric[3, 1] = -1
 metric[2, 3] = metric[3, 2] = a * (v + u + 2 * y)
-del u, v, x, y, a

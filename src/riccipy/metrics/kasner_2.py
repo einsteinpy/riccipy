@@ -8,4 +8,3 @@ variables = ()
 functions = ()
 t, x, y, z = coords
 metric = diag(-1, t ** 2, 1, 1)
-del t, x, y, z

@@ -9,4 +9,3 @@ functions = ()
 t, r, th, ph = coords
 p0 = variables
 metric = diag(-sqrt(7 * p0) * r, Rational(7, 4), r ** 2, r ** 2 * sin(th) ** 2)
-del t, r, th, ph, p0

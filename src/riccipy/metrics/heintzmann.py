@@ -12,4 +12,3 @@ A, a, K = variables
 metric = diag(
     -A ** 2 * (1 + a * r ** 2) ** 3, (1 + a * r ** 2) / K, r ** 2, r ** 2 * sin(th) ** 2
 )
-del t, r, th, ph, A, a, K

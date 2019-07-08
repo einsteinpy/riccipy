@@ -29,4 +29,3 @@ metric[3, 3] = (
     / expr
 )
 metric[0, 3] = metric[3, 0] = a * (2 * M * x - Q ** 2) * (y ** 2 - 1) / expr
-del expr, t, x, y, z, a, M, Q

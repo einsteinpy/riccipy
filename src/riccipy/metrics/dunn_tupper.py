@@ -13,4 +13,3 @@ metric = diag(
     t ** (-2 * b) * exp(-4 * x),
     t ** (-2 * b) * exp(4 * x),
 )
-del t, x, y, z

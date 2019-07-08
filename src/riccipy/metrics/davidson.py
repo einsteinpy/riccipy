@@ -15,4 +15,3 @@ metric = diag(
     t ** Rational(-2, 3) / expr,
     t ** Rational(4, 3) * r ** 2 / expr,
 )
-del expr, t, r, z, phi

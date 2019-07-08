@@ -17,4 +17,3 @@ metric = diag(
     r ** 2,
     r ** 2 * sin(th) ** 2,
 )
-del t, r, th, ph

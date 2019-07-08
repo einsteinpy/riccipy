@@ -14,4 +14,3 @@ metric = diag(
     exp(2 * x) * cosh(2 * t),
     exp(2 * x) * cosh(2 * t),
 )
-del t, x, y, z

@@ -10,4 +10,3 @@ functions = ()
 t, ch, th, ph = coords
 La = variables
 metric = diag(-1 / La, 1 / La, sin(ch) ** 2 / La, sin(ch) ** 2 * sin(th) ** 2 / La)
-del t, ch, th, ph, La

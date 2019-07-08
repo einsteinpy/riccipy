@@ -15,4 +15,3 @@ metric = diag(
     sin(z) ** Rational(4, 3),
     1 / a ** 2,
 )
-del t, x, y, z, a

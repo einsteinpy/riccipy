@@ -27,4 +27,3 @@ metric[3, 3] = (
 metric[0, 1] = metric[1, 0] = -1
 metric[0, 3] = metric[3, 0] = -2 * a * sin(th) ** 2 * M * r / expr
 metric[1, 3] = metric[3, 1] = a * sin(th) ** 2
-del expr, u, r, th, ph, a, M

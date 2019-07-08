@@ -22,4 +22,3 @@ metric[1, 1] = (
 )
 metric[2, 2] = r ** 2
 metric[3, 3] = r ** 2 * sin(th) ** 2
-del t, r, th, ph, A, C, K

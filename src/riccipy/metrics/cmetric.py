@@ -15,4 +15,3 @@ metric = diag(
     1 / ((x + y) ** 2 * h(y)),
     f(x) / (x + y) ** 2,
 )
-del t, x, y, ph, f, h

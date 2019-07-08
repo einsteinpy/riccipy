@@ -13,4 +13,3 @@ nu, ch, th, ph = coords
 A0 = variables
 expr = A0 ** 2 * (1 - cos(nu)) ** 2
 metric = diag(-expr, expr, expr * sin(ch) ** 2, expr * sin(ch) ** 2 * sin(th) ** 2)
-del expr, nu, ch, th, ph, A0

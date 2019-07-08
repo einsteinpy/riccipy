@@ -9,4 +9,3 @@ variables = ()
 functions = ()
 t, x, y, z = coords
 metric = diag(-1 / sqrt(z), z, z, 1 / sqrt(z))
-del t, x, y, z

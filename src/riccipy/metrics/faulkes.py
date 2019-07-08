@@ -14,4 +14,3 @@ expr = (E(t) - (r / (2 * k))) ** 2
 metric = diag(
     -E(t) ** 2 / expr, expr ** 2, expr ** 2 * r ** 2, expr ** 2 * r ** 2 * sin(th) ** 2
 )
-del expr, t, r, th, ph, k, E

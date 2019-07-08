@@ -13,4 +13,3 @@ functions = ()
 t, x, th, ph = coords
 k = variables
 metric = diag(-k ** 2 * sinh(x) ** 2, k ** 2, k ** 2, k ** 2 * sin(th) ** 2)
-del t, x, th, ph, k

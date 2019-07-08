@@ -16,4 +16,3 @@ metric[2, 2] = 1
 metric[3, 3] = 1
 metric[0, 1] = metric[1, 0] = -(a * x + b)
 metric[1, 2] = metric[2, 1] = a * w
-del w, u, x, y, a, b, f

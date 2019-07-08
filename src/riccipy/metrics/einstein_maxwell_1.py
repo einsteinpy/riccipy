@@ -12,4 +12,3 @@ a, b, m = variables
 expr1 = cosh(log(a * rh ** m)) ** 2
 expr2 = rh ** (2 * m ** 2) * b ** 2 * expr1
 metric = diag(-expr2, expr2, 1 / (b ** 2 * expr1), rh ** 2 * b ** 2 * expr1)
-del expr1, expr2, t, ph, rh, z, a, b, m

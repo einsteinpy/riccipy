@@ -16,4 +16,3 @@ metric[3, 3] = (exp(-s(x, y)) * r(x, y) - w(x, y) * exp(s(x, y))) * (
 )
 metric[0, 3] = metric[3, 0] = -w(x, y) * exp(2 * s(x, y))
 metric[1, 2] = metric[2, 1] = Rational(1, 2) * exp(2 * k(x, y) - 2 * s(x, y))
-del t, x, y, z, k, r, s, w

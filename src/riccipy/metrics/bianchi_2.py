@@ -9,4 +9,3 @@ functions = symbols("alpha beta gamma", cls=Function)
 t, x, y, z = coords
 al, be, ga = functions
 metric = diag(1, exp(al(t)), exp(be(t)), exp(ga(t)))
-del t, x, y, z, al, be, ga

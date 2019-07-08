@@ -15,4 +15,3 @@ metric = diag(
     expr * r ** 2,
     expr * r ** 2 * sin(th) ** 2,
 )
-del expr, t, r, th, ph, M

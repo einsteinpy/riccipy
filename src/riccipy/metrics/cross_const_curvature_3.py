@@ -10,4 +10,3 @@ functions = ()
 t, x, y, z = coords
 A, B = variables
 metric = diag(-B ** 2 * sinh(z) ** 2, A ** 2, A ** 2 * sin(x) ** 2, B ** 2)
-del t, x, y, z, A, B

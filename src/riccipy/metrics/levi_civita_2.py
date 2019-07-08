@@ -10,4 +10,3 @@ functions = ()
 t, z, r, ph = coords
 M = variables
 metric = diag(-(2 * M / z - 1), 1 / (2 * M / z - 1), z ** 2, z ** 2 * sinh(r) ** 2)
-del t, z, r, ph, M

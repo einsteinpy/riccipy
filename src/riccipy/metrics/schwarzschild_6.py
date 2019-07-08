@@ -13,4 +13,3 @@ metric = diag(
     Rational(1, 2) * w ** 2 / (M * expr), 0, expr ** 2, expr ** 2 * sin(th) ** 2
 )
 metric[0, 1] = metric[1, 0] = 1
-del expr, u, w, th, ph, M

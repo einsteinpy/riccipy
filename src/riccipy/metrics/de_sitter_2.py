@@ -11,4 +11,3 @@ t, x, y, z = coords
 al = variables
 expr = exp(2 * t / al)
 metric = diag(-1, expr, expr, expr)
-del expr, t, x, y, z, al

@@ -8,4 +8,3 @@ variables = ()
 functions = ()
 t, r, th, ph = coords
 metric = diag(-1, 1, r ** 2, r ** 2 * sin(th) ** 2)
-del t, r, th, ph

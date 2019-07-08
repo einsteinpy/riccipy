@@ -10,4 +10,3 @@ functions = ()
 t, x, y, z = coords
 k = variables
 metric = diag(-1, t ** (2 / k), t ** (1 - 1 / k), t ** (1 - 1 / k))
-del t, x, y, z, k

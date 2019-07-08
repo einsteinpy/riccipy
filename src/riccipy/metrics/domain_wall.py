@@ -11,4 +11,3 @@ k = variables
 expr1 = (1 - k * z) ** 2
 expr2 = exp(2 * k * t)
 metric = diag(-expr1, expr1 * expr2, expr1 * expr2, 1)
-del expr1, expr2, t, x, y, z, k

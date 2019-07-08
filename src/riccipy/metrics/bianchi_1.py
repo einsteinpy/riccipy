@@ -9,4 +9,3 @@ functions = symbols("alpha", cls=Function)
 t, x, y, z = coords
 al = functions
 metric = diag(1, exp(-2 * al(t)), exp(al(t)), exp(al(t)))
-del t, x, y, z, al

@@ -10,4 +10,3 @@ functions = symbolic("alpha beta", cls=Function)
 t, r, th, ph = coords
 al, be = functions
 metric = diag(-exp(2 * al(r)), exp(2 * be(r)), r ** 2, r ** 2 * sin(th) ** 2)
-del t, r, th, ph, al, be

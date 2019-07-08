@@ -14,4 +14,3 @@ metric = diag(
     cos(t) ** 2 * sinh(ch) ** 2,
     cos(t) ** 2 * sinh(ch) ** 2 * sin(th) ** 2,
 )
-del t, ch, th, ph

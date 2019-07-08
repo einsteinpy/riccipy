@@ -28,4 +28,3 @@ metric[3, 3] = (
     / expr
 )
 metric[0, 3] = metric[3, 0] = -2 * M * r * a * sin(th) ** 2 / expr
-del expr, t, r, th, ph, a, M

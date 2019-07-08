@@ -10,4 +10,3 @@ t, r, th, ph = coords
 M, La = variables
 expr = 1 - 2 * M / r - La * r ** 2 / 3
 metric = diag(-expr, 1 / expr, r ** 2, r ** 2 * sin(th) ** 2)
-del t, r, th, ph, M, La, expr

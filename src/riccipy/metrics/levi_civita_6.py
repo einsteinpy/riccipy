@@ -9,4 +9,3 @@ variables = ()
 functions = ()
 t, z, r, ph = coords
 metric = diag(-r ** 2 * z ** 2, z, z ** 2, 1 / z)
-del t, z, r, ph

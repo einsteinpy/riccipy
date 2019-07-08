@@ -16,4 +16,3 @@ metric = diag(
     expr2,
     expr2,
 )
-del expr1, expr2, t, x, y, z, M

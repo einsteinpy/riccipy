@@ -10,4 +10,3 @@ functions = symbols("alpha beta", cls=Function)
 t, x, y, w = coords
 al, be = functions
 metric = diag(-be(w) ** 2 * y ** 2, al(w) ** 2, be(w) ** 2, 1)
-del t, x, y, w, al, be

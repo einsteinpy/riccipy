@@ -16,4 +16,3 @@ metric = diag(
     t * exp(2 * n * x),
     t * exp(-2 * n * x),
 )
-del t, x, y, z, n

@@ -11,4 +11,3 @@ t, x, y, z = coords
 metric = diag(
     -x ** 6, x ** 4 * cos(2 * t) ** 2, x ** 2 / cos(2 * t), x ** 2 / cos(2 * t)
 )
-del t, x, y, z

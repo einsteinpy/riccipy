@@ -11,4 +11,3 @@ t, x, y, z = coords
 k, d, m = variables
 expr = (k * x + d) ** (2 * m)
 metric = diag(-expr, expr, expr, expr)
-del expr, t, x, y, z, k, d, m

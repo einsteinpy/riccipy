@@ -22,4 +22,3 @@ metric[2, 2] = r ** 2 * exp(2 * ga(r, u, th))
 metric[3, 3] = r ** 2 * exp(-2 * ga(r, u, th)) * sin(th) ** 2
 metric[0, 1] = metric[1, 0] = -exp(2 * Q(r, u, th))
 metric[1, 2] = metric[2, 1] = -U(r, u, th) * r ** 2 * exp(2 * ga(r, u, th))
-del r, u, th, ph, Q, U, V, ga

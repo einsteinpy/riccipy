@@ -15,4 +15,3 @@ metric = diag(
     x1 * sin(x3),
     x1 ** Rational(3, 2) / sqrt(sin(x3)),
 )
-del x0, x1, x2, x3

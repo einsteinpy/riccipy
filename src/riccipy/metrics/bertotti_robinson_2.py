@@ -13,4 +13,3 @@ functions = ()
 t, r, th, ph = coords
 q = variables
 metric = diag(-q ** 2 / r ** 2, q ** 2 / r ** 2, q ** 2, q ** 2 * sin(th) ** 2)
-del t, r, th, ph, q

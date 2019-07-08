@@ -12,4 +12,3 @@ t, x, y, z = coords
 om = variables
 metric = diag(-1, 1, -Rational(1, 2) * exp(2 * sqrt(2) * om * x), 1)
 metric[0, 2] = metric[2, 0] = -exp(sqrt(2) * om * x)
-del t, x, y, z, om
