@@ -14,30 +14,6 @@ from sympy.tensor.tensor import (
 )
 
 
-class Repl(dict):
-    def getkey(self, tensor):
-        item = tensor if (tensor.is_TensorHead or tensor.is_Metric) else tensor.args[0]
-        for key in self.keys():
-            if (key == item) or (key.args[0] == item):
-                return key
-        return None
-
-    def haskey(self, tensor):
-        key = self.getkey(tensor)
-        return True if key is not None else False
-
-    def setitem(self, tensor, array):
-        key = self.getkey(tensor)
-        if key is not None:
-            return super().__setitem__(key, array)
-        raise KeyError(str(tensor))
-
-    def __setitem__(self, tensor, array):
-        if self.haskey(tensor):
-            return self.setitem(tensor, array)
-        return super().__setitem__(tensor, array)
-
-
 class AbstractTensor(object):
     """
     Wrapper class for sympy Array with attributes used for identification.
@@ -53,7 +29,7 @@ class AbstractTensor(object):
 
     def __new__(cls, obj, matrix):
         obj._array = matrix
-        obj._repl = Repl()
+        obj._repl = dict()
         return obj
 
     def as_matrix(self):
@@ -253,7 +229,8 @@ class Tensor(AbstractTensor, TensorHead):
         """
         array = simplify(self.as_array())
         self._array = array
-        self._repl.setitem(self, array)
+        for key in self._repl:
+            self._repl[key] = array
         return array
 
 
@@ -281,7 +258,7 @@ def expand_tensor(expr, idxs=None):
         Indices that encode the covariance and contravariance of the result.
 
     """
-    repl = Repl()
+    repl = dict()
 
     for arg in preorder_traversal(expr):
         if isinstance(arg, AbstractTensor):
