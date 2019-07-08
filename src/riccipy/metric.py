@@ -159,8 +159,9 @@ class Metric(AbstractTensor, TensorIndexType):
         """
         if self._ricci_scalar is None:
             mu, nu = indices("mu nu", self)
+            g = self.metric
             RR = self.ricci_tensor
-            res = expand_tensor(RR(mu, -mu))
+            res = expand_tensor(g(-mu, -nu) * RR(mu, nu))
             self._ricci_scalar = res
         return self._ricci_scalar
 
