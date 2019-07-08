@@ -3,7 +3,7 @@ from itertools import starmap
 from types import FunctionType
 
 import numpy as np
-from sympy import lambdify
+from sympy import Array, lambdify
 from sympy.tensor.tensor import TensExpr
 
 from .tensor import expand_tensor
@@ -13,9 +13,7 @@ class NumericalArray(object):
     def __init__(self, args, expr, idxs=None, **kwargs):
         self._vars = args
         self._objstr = str(expr)
-        self._array = (
-            expand_tensor(expr, idxs=idxs) if isinstance(expr, TensExpr) else expr
-        )
+        self._array = expr
         self._modules = kwargs.pop("modules", None)
         self._lambda = lambdify(self._vars, self._array, modules=self._modules)
         self._generator = self._build_generator()
@@ -47,4 +45,8 @@ class NumericalArray(object):
 
 
 def lambdify_tensor(args, expr, idxs=None, **kwargs):
-    return NumericalArray(args, expr, idxs, **kwargs)
+    if isinstance(expr, TensExpr):
+        expr = expand_tensor(expr)
+    if isinstance(expr, Array):
+        return NumericalArray(args, expr, idxs, **kwargs)
+    return lambdify(args, expr, **kwargs)
