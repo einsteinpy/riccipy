@@ -1,6 +1,8 @@
-# Taub metric for plane symmetric, static perfect fluid.
-# Taub, Phys. Rev., v103, p454, (1956)
-# Stephani (13.44) p161
+"""
+Taub metric for plane symmetric, static perfect fluid.
+Taub, Phys. Rev., v103, p454, (1956)
+Stephani (13.44) p161
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)

@@ -1,4 +1,6 @@
-# Minkowski space in Cartesian coordinates
+"""
+Minkowski space in Cartesian coordinates
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)

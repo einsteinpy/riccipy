@@ -1,4 +1,6 @@
-# Dunn and Tupper's G3VI0 perfect fluid solution
+"""
+Dunn and Tupper's G3VI0 perfect fluid solution
+"""
 from sympy import diag, exp, symbols
 
 coords = symbols("t x y z", real=True)

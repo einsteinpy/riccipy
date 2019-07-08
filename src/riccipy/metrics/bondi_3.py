@@ -1,5 +1,7 @@
-# The Bondi metric
-# Bondi, Proc. Roy. Soc. Lond. A, v269, p21, (1962)
+"""
+The Bondi metric
+Bondi, Proc. Roy. Soc. Lond. A, v269, p21, (1962)
+"""
 from sympy import Function, exp, sin, symbols, zeros
 
 coords = symbols("r u theta phi", real=True)

@@ -1,5 +1,7 @@
-# Levi-Civita static vacuum solution. Special case m=2, Petrov D
-# Stephani (20.8) p221
+"""
+Levi-Civita static vacuum solution. Special case m=2, Petrov D
+Stephani (20.8) p221
+"""
 from sympy import diag, symbols
 
 coords = symbols("t rho z phi", real=True)

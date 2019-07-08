@@ -1,5 +1,7 @@
-# Durgapal's static spherically symmetric perfect fluid with n=4
-# Durgapal, J. Phys. A, v15, p2637-2644, (1982)
+"""
+Durgapal's static spherically symmetric perfect fluid with n=4
+Durgapal, J. Phys. A, v15, p2637-2644, (1982)
+"""
 from sympy import Rational, sin, symbols, zeros
 
 coords = symbols("t r theta phi", real=True)

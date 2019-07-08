@@ -1,5 +1,7 @@
-# anti-de Sitter space
-# Hawking and Ellis (5.9) p131
+"""
+Anti-de Sitter space
+Hawking and Ellis (5.9) p131
+"""
 from sympy import cos, diag, sin, sinh, symbols
 
 coords = symbols("t chi theta phi", real=True)

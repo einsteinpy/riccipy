@@ -1,5 +1,7 @@
-# Static cylindrically symmetric Einstein-Maxwell field (i) angular magnetic field (caused by an axial current)
-# Stephani (20.9a) p221
+"""
+Static cylindrically symmetric Einstein-Maxwell field (i) angular magnetic field (caused by an axial current)
+Stephani (20.9a) p221
+"""
 from sympy import cosh, diag, log, symbols
 
 coords = symbols("t rho z phi", real=True)

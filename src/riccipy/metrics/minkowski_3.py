@@ -1,4 +1,6 @@
-# Minkowski space in null coordinates
+"""
+Minkowski space in null coordinates
+"""
 from sympy import Rational, sin, symbols, zeros
 
 coords = symbols("u v theta phi", real=True)

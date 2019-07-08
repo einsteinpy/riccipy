@@ -1,5 +1,7 @@
-# Static form of anti-de Sitter space
-# Hawking and Ellis (5.9) p131
+"""
+Static form of Anti-de Sitter space
+Hawking and Ellis (5.9) p131
+"""
 from sympy import cosh, diag, sin, sinh, symbols
 
 coords = symbols("t r theta phi", real=True)

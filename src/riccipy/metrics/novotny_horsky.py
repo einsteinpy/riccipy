@@ -1,5 +1,7 @@
-# Novotny and Horsky plane symmetric vacuum metric
-# Novotny et al., Can. J. Phys., v24, p718, (1974)
+"""
+Novotny and Horsky plane symmetric vacuum metric
+Novotny et al., Can. J. Phys., v24, p718, (1974)
+"""
 from sympy import Rational, cos, diag, sin, symbols
 
 coords = symbols("t x y z", real=True)

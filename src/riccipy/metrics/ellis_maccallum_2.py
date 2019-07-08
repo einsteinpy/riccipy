@@ -1,6 +1,8 @@
-# Ellis and MacCallum Bianchi VIo vacuum solution
-# Ellis et al., Commun. Math. Phys., v12, p108, (1969)
-# Stephani (11.56) p136
+"""
+Ellis and MacCallum Bianchi VIo vacuum solution
+Ellis et al., Commun. Math. Phys., v12, p108, (1969)
+Stephani (11.56) p136
+"""
 from sympy import diag, exp, sqrt, symbols
 
 coords = symbols("t x y z", real=True)

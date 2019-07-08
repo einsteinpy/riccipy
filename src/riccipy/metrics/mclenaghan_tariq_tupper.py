@@ -1,7 +1,9 @@
-# McLenaghan Tariq Tupper metric
-# McLenaghan, J. Math. Phys., v16, p11, (1975)
-# Tupper, Gen. Rel. Grav., v7, p479, (1976)
-# Stephani (10.21) p121
+"""
+McLenaghan Tariq Tupper metric
+McLenaghan, J. Math. Phys., v16, p11, (1975)
+Tupper, Gen. Rel. Grav., v7, p479, (1976)
+Stephani (10.21) p121
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y phi", real=True)

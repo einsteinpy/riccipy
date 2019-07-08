@@ -1,5 +1,7 @@
-# Vaidya metric in outgoing Eddington-Finkelstein coordinates
-# Stephani (13.20) p158
+"""
+Vaidya metric in outgoing Eddington-Finkelstein coordinates
+Stephani (13.20) p158
+"""
 from sympy import Function, diag, sin, symbols
 
 coords = symbols("r v theta phi", real=True)

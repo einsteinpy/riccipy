@@ -1,4 +1,6 @@
-# Kasner power-law vacuum solution. Axisymmetric case
+"""
+Kasner power-law vacuum solution. Axisymmetric case
+"""
 from sympy import Rational, diag, symbols
 
 coords = symbols("t x y z", real=True)

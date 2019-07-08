@@ -1,5 +1,7 @@
-# Nariai vacuum metric
-# Nariai, Sci. Rep. Tohoku Univ., v35, p62, (1951)
+"""
+Nariai vacuum metric
+Nariai, Sci. Rep. Tohoku Univ., v35, p62, (1951)
+"""
 from sympy import Function, cos, diag, log, sin, sqrt, symbols
 
 coords = symbols("t x y z", real=True)

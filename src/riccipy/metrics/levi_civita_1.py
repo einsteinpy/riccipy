@@ -1,5 +1,7 @@
-# Levi-Civita solution, Class AI. Aka the exterior Schwarzschild metric.
-# Stephani (Table 16.2) p188
+"""
+Levi-Civita solution, Class AI. Aka the exterior Schwarzschild metric.
+Stephani (Table 16.2) p188
+"""
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

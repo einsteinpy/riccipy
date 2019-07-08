@@ -1,5 +1,7 @@
-# Griffiths' metric
-# Griffiths, Math. Proc. Camb. Phil. Soc., v77, p559, (1975)
+"""
+Griffiths' metric
+Griffiths, Math. Proc. Camb. Phil. Soc., v77, p559, (1975)
+"""
 from sympy import Rational, symbols, zeros
 
 coords = symbols("u v x y", real=True)

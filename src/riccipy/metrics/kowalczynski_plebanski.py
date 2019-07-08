@@ -1,6 +1,8 @@
-# Kowalczynski and Plebanski metric
-# Kowalczynski et al., Int. J. Theor. Phys., v16, p371, (1977)
-# Stephani (27.57) p297
+"""
+Kowalczynski and Plebanski metric
+Kowalczynski et al., Int. J. Theor. Phys., v16, p371, (1977)
+Stephani (27.57) p297
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)

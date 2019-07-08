@@ -1,5 +1,7 @@
-# Beckers, Sinzinkayo, and Demaret solution
-# Beckers et al., Phys. Rev. D, v30, p1846, (1984)
+"""
+Beckers, Sinzinkayo, and Demaret solution
+Beckers et al., Phys. Rev. D, v30, p1846, (1984)
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)

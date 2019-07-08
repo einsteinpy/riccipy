@@ -1,4 +1,6 @@
-# Schwarzschild exterior metric in isotropic coordinates
+"""
+Schwarzschild exterior metric in isotropic coordinates
+"""
 from sympy import Rational, diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

@@ -1,5 +1,7 @@
-# Tolman's type VI solution
-# Tolman, Phys. Rev., v55, p363-373, (1939)
+"""
+Tolman's type VI solution
+Tolman, Phys. Rev., v55, p363-373, (1939)
+"""
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

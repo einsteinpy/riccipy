@@ -1,6 +1,8 @@
-# Reissner-Nordstrom spherically symmetric electro-vacuum solution
-# Reissner, Ann. Phys., v50, p106, (1916)
-# Stephani (13.21) p158
+"""
+Reissner-Nordstrom spherically symmetric electro-vacuum solution
+Reissner, Ann. Phys., v50, p106, (1916)
+Stephani (13.21) p158
+"""
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

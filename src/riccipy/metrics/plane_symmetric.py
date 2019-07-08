@@ -1,5 +1,7 @@
-# Bianchi I plane symmetric model
-# Stephani (13.49) p162
+"""
+Bianchi I plane symmetric model
+Stephani (13.49) p162
+"""
 from sympy import Function, diag, exp, symbols
 
 coords = symbols("t x y z", real=True)

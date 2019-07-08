@@ -1,4 +1,6 @@
-# Metric for spacetime with domain wall
+"""
+Metric for spacetime with domain wall
+"""
 from sympy import diag, exp, symbols
 
 coords = symbols("t x y z", real=True)

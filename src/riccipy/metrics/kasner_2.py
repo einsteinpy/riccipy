@@ -1,4 +1,6 @@
-# Kasner power-law vacuum solution. Axisymmetric flat case
+"""
+Kasner power-law vacuum solution. Axisymmetric flat case
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)

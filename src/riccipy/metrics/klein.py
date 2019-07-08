@@ -1,4 +1,6 @@
-# Klein's static spherically symmetric radiation perfect fluid solution
+"""
+Klein's static spherically symmetric radiation perfect fluid solution
+"""
 from sympy import Rational, diag, sin, sqrt, symbols
 
 coords = symbols("t r theta phi", real=True)

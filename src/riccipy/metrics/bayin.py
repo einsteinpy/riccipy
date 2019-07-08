@@ -1,5 +1,7 @@
-# Bayin's spherically symmetric static perfect fluid solution II
-# Bayin, Phys. Rev. D, v18, p2745-2751, (1978)
+"""
+Bayin's spherically symmetric static perfect fluid solution II
+Bayin, Phys. Rev. D, v18, p2745-2751, (1978)
+"""
 from sympy import Rational, asin, sin, symbols, zeros
 
 coords = symbols("t r theta phi", real=True)

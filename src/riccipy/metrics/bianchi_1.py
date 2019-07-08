@@ -1,4 +1,6 @@
-# General metric from Bianchi II automorphisms
+"""
+General metric from Bianchi II automorphisms
+"""
 from sympy import Function, diag, exp, symbols
 
 coords = symbols("t x y z", real=True)

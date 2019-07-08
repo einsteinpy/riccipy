@@ -1,6 +1,8 @@
-# McVittie's plane Einstein-Maxwell field with Lambda=0
-# McVittie, Prog. Roy. Soc. Lond., v124, p366, (1929)
-# Stephani (13.26) p158
+"""
+McVittie's plane Einstein-Maxwell field with Lambda=0
+McVittie, Prog. Roy. Soc. Lond., v124, p366, (1929)
+Stephani (13.26) p158
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)

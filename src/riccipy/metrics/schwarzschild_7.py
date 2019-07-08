@@ -1,4 +1,6 @@
-# Schwarzschild metric as the rho->0 limit of Tolman-Bondi dust
+"""
+Schwarzschild metric as the rho->0 limit of Tolman-Bondi dust
+"""
 from sympy import Rational, diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

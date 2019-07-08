@@ -1,5 +1,7 @@
-# Koutras-McIntosh metric (no symmetries or invariants)
-# Koutras et al., Class. Quantum Grav., v13, pL47, (1996)
+"""
+Koutras-McIntosh metric (no symmetries or invariants)
+Koutras et al., Class. Quantum Grav., v13, pL47, (1996)
+"""
 from sympy import Function, symbols, zeros
 
 coords = symbols("w u x y", real=True)

@@ -1,5 +1,7 @@
-# LRS stiff perfect fluid cosmological solution with G4 on S3
-# Stephani (12.11) p146
+"""
+LRS stiff perfect fluid cosmological solution with G4 on S3
+Stephani (12.11) p146
+"""
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)

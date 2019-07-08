@@ -1,4 +1,6 @@
-# Schwarzschild interior solution in curvature coordinates
+"""
+Schwarzschild interior solution in curvature coordinates
+"""
 from sympy import diag, sin, sqrt, symbols
 
 coords = symbols("t r theta phi", real=True)

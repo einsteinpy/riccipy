@@ -1,4 +1,6 @@
-# Kottler's generalization of the Schwarzschild metric with non-zero cosmological constant. Aka Schwarzschild-de Sitter.
+"""
+Kottler's generalization of the Schwarzschild metric with non-zero cosmological constant. Aka Schwarzschild-de Sitter.
+"""
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

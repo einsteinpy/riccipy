@@ -1,6 +1,8 @@
-# Godel metric
-# Rev. Mod. Phys., v21, p447, (1949)
-# Stephani (10.25) 122
+"""
+Godel metric
+Rev. Mod. Phys., v21, p447, (1949)
+Stephani (10.25) 122
+"""
 from sympy import Rational, diag, exp, sqrt, symbols
 
 coords = symbols("t x y z", real=True)

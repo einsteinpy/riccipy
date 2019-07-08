@@ -1,6 +1,8 @@
-# Kerr metric in Boyer Lindquist coordinates
-# Newman, J. Math. Phys., v6, p918, (1965)
-# Stephani (19.19) p213
+"""
+Kerr metric in Boyer Lindquist coordinates
+Newman, J. Math. Phys., v6, p918, (1965)
+Stephani (19.19) p213
+"""
 from sympy import cos, sin, symbols, zeros
 
 coords = symbols("t r theta phi", real=True)

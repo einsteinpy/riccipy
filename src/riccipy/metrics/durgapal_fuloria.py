@@ -1,5 +1,7 @@
-# Durgapal and Fuloria's static spherically symmetric perfect fluid
-# Durgapal et al., Gen. Rel. Grav., v17, p671-681, (1985)
+"""
+Durgapal and Fuloria's static spherically symmetric perfect fluid
+Durgapal et al., Gen. Rel. Grav., v17, p671-681, (1985)
+"""
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

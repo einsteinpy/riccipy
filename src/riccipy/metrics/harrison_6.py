@@ -1,6 +1,8 @@
-# Harrison III-9(a) Petrov type D, Kinnersley class II.B (a=l=0)
-# Harrison, Phys. Rev., v116, p1285, (1959)
-# d'Inverno et al., J. Math. Phys., v12, p1258, (1971)
+"""
+Harrison III-9(a) Petrov type D, Kinnersley class II.B (a=l=0)
+Harrison, Phys. Rev., v116, p1285, (1959)
+d'Inverno et al., J. Math. Phys., v12, p1258, (1971)
+"""
 from sympy import diag, sinh, symbols
 
 coords = symbols("x_0:4", real=True)

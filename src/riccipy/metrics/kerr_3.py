@@ -1,4 +1,6 @@
-# Kerr metric in outgoing Eddington Finkelstein form
+"""
+Kerr metric in outgoing Eddington Finkelstein form
+"""
 from sympy import cos, sin, symbols, zeros
 
 coords = symbols("u r theta phi", real=True)

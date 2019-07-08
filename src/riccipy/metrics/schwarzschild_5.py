@@ -1,4 +1,6 @@
-# Schwarzschild exterior metric in Cartesian isotropic coordinates
+"""
+Schwarzschild exterior metric in Cartesian isotropic coordinates
+"""
 from sympy import Rational, diag, sqrt, symbols
 
 coords = symbols("t x y z", real=True)

@@ -1,5 +1,7 @@
-# Levi-Civita solution, Class BII
-# Stephani (Table 16.2) p188
+"""
+Levi-Civita solution, Class BII
+Stephani (Table 16.2) p188
+"""
 from sympy import diag, sinh, symbols
 
 coords = symbols("t z r phi", real=True)

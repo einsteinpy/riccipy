@@ -1,5 +1,7 @@
-# Tolman's type VII static spherically symmetric perfect fluid solution
-# Tolman, Phys. Rev., v55, p363-373, (1939)
+"""
+Tolman's type VII static spherically symmetric perfect fluid solution
+Tolman, Phys. Rev., v55, p363-373, (1939)
+"""
 from sympy import Rational, diag, log, sin, sqrt, symbols
 
 coords = symbols("t r theta phi", real=True)

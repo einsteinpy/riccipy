@@ -1,5 +1,7 @@
-# Lewis Papapetrou metric
-# Ernst, Phys. Rev., v167, p1175, (1968)
+"""
+Lewis Papapetrou metric
+Ernst, Phys. Rev., v167, p1175, (1968)
+"""
 from sympy import Function, Rational, exp, symbols, zeros
 
 coords = symbols("t x y z", real=True)

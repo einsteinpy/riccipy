@@ -1,4 +1,6 @@
-# de Sitter space with a non-zero cosmological constant
+"""
+de Sitter space with a non-zero cosmological constant
+"""
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)
