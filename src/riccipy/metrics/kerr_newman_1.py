@@ -1,4 +1,5 @@
 # Kerr metric in Cartesian coordinates
+# Allen, Gen. Rel. Grav., v26, p21, (1994)
 from sympy import symbols, zeros
 
 coords = symbols("t x y z", real=True)

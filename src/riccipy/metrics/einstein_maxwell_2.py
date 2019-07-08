@@ -1,4 +1,5 @@
 # Static cylindrically symmetric Einstein-Maxwell field (ii) longitudinal magnetic field (caused by an angular current)
+# Stephani (20.9b) p221
 from sympy import cosh, diag, log, symbols
 
 coords = symbols("t rho z phi", real=True)

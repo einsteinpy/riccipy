@@ -1,4 +1,5 @@
 # Cross product of two 2-dimensional subspaces of constant curvature
+# Stephani (10.8) p118
 from sympy import diag, sin, sinh, symbols
 
 coords = symbols("t x y z", real=True)

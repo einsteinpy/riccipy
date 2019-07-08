@@ -1,4 +1,6 @@
 # Reissner-Nordstrom spherically symmetric electro-vacuum solution with non-zero cosmological constant
+# Reissner, Ann. Phys., v50, p106, (1916)
+# Stephani (Table 13.1) p157
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

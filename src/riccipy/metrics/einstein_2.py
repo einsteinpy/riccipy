@@ -1,4 +1,5 @@
 # Einstein's static universe. Polar coordinates
+# Stephani (10.23b) p122
 from sympy import diag, sin, symbols
 
 coords = symbols("t chi theta phi", real=True)

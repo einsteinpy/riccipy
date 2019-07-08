@@ -1,4 +1,5 @@
 # Heintzmann's static spherically symmetric perfect fluid solution
+# Heintzmann, Z. Phys., v228, p489-493, (1969)
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

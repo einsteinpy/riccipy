@@ -1,4 +1,5 @@
 # de Sitter space
+# Hawking and Ellis p125
 from sympy import cosh, diag, sin, symbols
 
 coords = symbols("t chi theta phi", real=True)

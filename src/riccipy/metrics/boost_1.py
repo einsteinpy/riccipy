@@ -1,4 +1,5 @@
 # Metric with G4 on T3 and boost isotropy (flat case, k=0)
+# Stephani (11.16) p128
 from sympy import Function, diag, symbols
 
 coords = symbols("t x y w", real=True)

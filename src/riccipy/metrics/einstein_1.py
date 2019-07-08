@@ -1,4 +1,5 @@
 # Einstein's static universe. Cartesian coordinates
+# Stephani (10.23a) p122
 from sympy import diag, sqrt, symbols
 
 coords = symbols("t x y z", real=True)

@@ -1,4 +1,5 @@
 # Einstein's static universe. Curvature coordinates
+# Stephani (10.23c) p122
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

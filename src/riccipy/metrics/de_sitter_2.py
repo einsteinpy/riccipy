@@ -1,4 +1,5 @@
 # de Sitter space
+# Hawking and Ellis p125
 from sympy import diag, exp, symbols
 
 coords = symbols("t x y z", real=True)

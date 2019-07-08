@@ -1,4 +1,5 @@
 # General static, spherically symmetric metric in curvature coordinates
+# Stephani (14.1) p163
 from sympy import Function, diag, exp, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

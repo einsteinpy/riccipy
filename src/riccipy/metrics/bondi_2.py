@@ -1,4 +1,5 @@
 # Spherical Bondi metric in advanced (ingoing) coordinates
+# Bondi, Proc. Roy. Soc. Lond. A, v282, p303, (1964)
 from sympy import Function, diag, sin, symbols
 
 coords = symbols("r v theta phi", real=True)

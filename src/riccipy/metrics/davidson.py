@@ -1,4 +1,5 @@
 # Davidson's cylindrically symmetric radiation perfect fluid universe
+# Davidson, J. Math. Phys., v32, p1560, (1991)
 from sympy import Rational, diag, symbols
 
 coords = symbols("t r z phi", real=True)

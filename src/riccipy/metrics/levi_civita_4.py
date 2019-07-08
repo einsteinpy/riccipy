@@ -1,4 +1,5 @@
 # Levi-Civita solution, Class BI
+# Stephani (Table 16.2) p188
 from sympy import diag, sin, symbols
 
 coords = symbols("t r theta phi", real=True)

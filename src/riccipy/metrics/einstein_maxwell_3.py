@@ -1,4 +1,5 @@
 # Static cylindrically symmetric Einstein-Maxwell field (iii) radial electric field (caused by an axial charge distribution)
+# Stephani (20.9c) p221
 from sympy import cosh, diag, log, symbols
 
 coords = symbols("t rho z phi", real=True)

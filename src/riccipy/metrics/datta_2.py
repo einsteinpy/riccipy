@@ -1,4 +1,5 @@
 # Datta's Einstein-Maxwell solution
+# Stephani (11.62) p137
 from sympy import diag, symbols
 
 coords = symbols("t x y z", real=True)
