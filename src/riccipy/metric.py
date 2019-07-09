@@ -4,7 +4,7 @@ from sympy import Array, Pow, Rational, S, ones, tensorproduct, zeros
 from sympy.tensor.tensor import TensorIndexType
 
 from .partial import PartialDerivative
-from .tensor import AbstractTensor, ReplacementManager, Tensor, expand_tensor, indices
+from .tensor import AbstractTensor, ReplacementManager, Tensor, expand_array, indices
 
 
 class Metric(AbstractTensor, TensorIndexType):
@@ -41,13 +41,13 @@ class Metric(AbstractTensor, TensorIndexType):
         Examples
         --------
         >>> from sympy import diag, symbols
-        >>> from einsteinpy.symbolic.tensor import indices, expand_tensor
+        >>> from einsteinpy.symbolic.tensor import indices, expand_array
         >>> from einsteinpy.symbolic.metric import Metric
         >>> t, x, y, z = symbols('t x y z')
         >>> eta = Metric('eta', [t, x, y, z], diag(1, -1, -1, -1))
         >>> mu, nu = indices('mu nu', eta)
         >>> expr = eta(mu, nu) * eta(-mu, -nu)
-        >>> expand_tensor(expr)
+        >>> expand_array(expr)
         4
 
         """
@@ -106,7 +106,7 @@ class Metric(AbstractTensor, TensorIndexType):
                 * g(si, rh)
                 * (d(-mu) * g(-nu, -rh) + d(-nu) * g(-rh, -mu) - d(-rh) * g(-mu, -nu))
             )
-            syms = expand_tensor(gamma, [si, -mu, -nu])
+            syms = expand_array(gamma, [si, -mu, -nu])
             self._christoffel = Tensor("Gamma", syms, self, covar=(1, -1, -1))
         return self._christoffel
 
@@ -130,7 +130,7 @@ class Metric(AbstractTensor, TensorIndexType):
                 + gamma(rh, -mu, -la) * gamma(la, -nu, -si)
                 - gamma(rh, -nu, -la) * gamma(la, -mu, -si)
             )
-            res = expand_tensor(R, [rh, -si, -mu, -nu])
+            res = expand_array(R, [rh, -si, -mu, -nu])
             self._riemann = Tensor(
                 "R", res, self, symmetry=[[2, 2]], covar=(1, -1, -1, -1)
             )
@@ -146,7 +146,7 @@ class Metric(AbstractTensor, TensorIndexType):
         if self._ricci_tensor is None:
             mu, nu, si = indices("mu nu sigma", self)
             R = self.riemann
-            res = expand_tensor(R(si, -mu, -si, -nu), [-mu, -nu])
+            res = expand_array(R(si, -mu, -si, -nu), [-mu, -nu])
             self._ricci_tensor = Tensor("R", res, self, covar=(-1, -1))
         return self._ricci_tensor
 
@@ -160,7 +160,7 @@ class Metric(AbstractTensor, TensorIndexType):
         if self._ricci_scalar is None:
             mu, nu = indices("mu nu", self)
             RR = self.ricci_tensor
-            res = expand_tensor(RR(mu, -mu))
+            res = expand_array(RR(mu, -mu))
             self._ricci_scalar = res
         return self._ricci_scalar
 
@@ -205,7 +205,7 @@ class Metric(AbstractTensor, TensorIndexType):
                 )
                 + c2 * (g(rh, -mu) * g(-nu, -si) - g(rh, -nu) * g(-mu, -si)) * RRR
             )
-            res = expand_tensor(C, [rh, -si, -mu, -nu])
+            res = expand_array(C, [rh, -si, -mu, -nu])
             self._weyl = Tensor(
                 "C", res, self, symmetry=[[2, 2]], covar=(1, -1, -1, -1)
             )
@@ -223,7 +223,7 @@ class Metric(AbstractTensor, TensorIndexType):
             g = self.metric
             R = self.ricci_tensor
             RR = self.ricci_scalar
-            res = expand_tensor(R(-mu, -nu) - Rational(1, 2) * RR * g(-mu, -nu))
+            res = expand_array(R(-mu, -nu) - Rational(1, 2) * RR * g(-mu, -nu))
             self._einstein = Tensor("G", res, self, covar=(-1, -1))
         return self._einstein
 

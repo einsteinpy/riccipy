@@ -67,13 +67,13 @@ def test_Metric_riemann():
             yield comp.equals(0)
 
     expr = R(-rh, -si, -mu, -nu) + R(-si, -rh, -mu, -nu)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))
     expr = R(-rh, -si, -mu, -nu) + R(-rh, -si, -nu, -mu)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))
     expr = R(-rh, -si, -mu, -nu) - R(-mu, -nu, -rh, -si)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))
     expr = R(-rh, -si, -mu, -nu) + R(-rh, -mu, -nu, -si) + R(-rh, -nu, -si, -mu)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))
 
 
 def test_Metric_ricci_tensor():
@@ -110,10 +110,10 @@ def test_Metric_weyl():
             yield comp.equals(0)
 
     expr = C(-rh, -si, -mu, -nu) + C(-si, -rh, -mu, -nu)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))
     expr = C(-rh, -si, -mu, -nu) + C(-rh, -si, -nu, -mu)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))
     expr = C(-rh, -si, -mu, -nu) - C(-mu, -nu, -rh, -si)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))
     expr = C(-rh, -si, -mu, -nu) + C(-rh, -mu, -nu, -si) + C(-rh, -nu, -si, -mu)
-    assert all(is_zero(expand_tensor(expr)))
+    assert all(is_zero(expand_array(expr)))

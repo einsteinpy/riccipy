@@ -107,15 +107,15 @@ def test_ReplacementManager():
     pass
 
 
-def test_expand_tensor():
+def test_expand_array():
     (coords, t, r, th, ph, mink, eta, mu, nu) = _generate_minkowski()
     E1, E2, E3, B1, B2, B3 = symbols("E_1:4 B_1:4", real=True)
     matrix = [[0, -E1, -E2, -E3], [E1, 0, -B3, B2], [E2, B3, 0, -B1], [E3, -B2, B1, 0]]
     F = Tensor("F", matrix, eta, symmetry=[[2]])
-    assert expand_tensor(eta(mu, nu) * eta(-mu, -nu)) == 4
-    assert expand_tensor(F(mu, -mu)) == 0
+    assert expand_array(eta(mu, nu) * eta(-mu, -nu)) == 4
+    assert expand_array(F(mu, -mu)) == 0
     assert (
-        expand_tensor(F(mu, nu) * F(-mu, -nu))
+        expand_array(F(mu, nu) * F(-mu, -nu))
         == 2 * B1 ** 2
         + 2 * B2 ** 2
         + 2 * B3 ** 2
@@ -125,21 +125,21 @@ def test_expand_tensor():
     )
     (coords, t, r, th, ph, schw, g, mu, nu) = _generate_schwarzschild()
     x = Tensor("x", [t, r, th, ph], g)
-    res = expand_tensor(g(mu, nu))
+    res = expand_array(g(mu, nu))
     assert schw.inv().equals(res)
-    res1 = expand_tensor(g(mu, nu) * g(-mu, -nu))
-    res2 = expand_tensor(g(-mu, -nu) * g(mu, nu))
+    res1 = expand_array(g(mu, nu) * g(-mu, -nu))
+    res2 = expand_array(g(-mu, -nu) * g(mu, nu))
     assert res1 == res2
     assert simplify(res1) == 4
-    res1 = expand_tensor(g(-mu, -nu) * x(nu))
-    res2 = expand_tensor(x(-mu))
+    res1 = expand_array(g(-mu, -nu) * x(nu))
+    res2 = expand_array(x(-mu))
     res3 = x.covariance_transform(-mu)
     assert res1 == res2
     assert res2 == res3
-    res1 = expand_tensor(g(mu, nu) * x(-nu))
-    res2 = expand_tensor(x(mu))
+    res1 = expand_array(g(mu, nu) * x(-nu))
+    res2 = expand_array(x(mu))
     assert simplify(res1) == res2
-    res = expand_tensor(x(mu) * x(-mu))
+    res = expand_array(x(mu) * x(-mu))
     assert (
         res
         == t ** 2 * (1 - 1 / r)
@@ -147,3 +147,10 @@ def test_expand_tensor():
         - th ** 2 * r ** 2
         - ph ** 2 * r ** 2 * sin(th) ** 2
     )
+
+def test_expand_tensor():
+    (coords, t, r, th, ph, schw, g, mu, nu) = _generate_schwarzschild()
+    res = expand_tensor('t', g(-mu, -nu)*g(mu, nu))
+    assert not isinstance(res, TensExpr)
+    res = expand_tensor('T', g(mu, nu))
+    assert isinstance(res, Tensor)
