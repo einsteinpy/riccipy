@@ -168,7 +168,7 @@ class Tensor(AbstractTensor, TensorHead):
         Examples
         --------
         >>> from sympy import diag, symbols
-        >>> from einsteinpy.symbolic.tensor import Tensor, indices, expand_tensor
+        >>> from einsteinpy.symbolic.tensor import Tensor, indices, expand_array
         >>> from einsteinpy.symbolic.metric import Metric
         >>> E1, E2, E3, B1, B2, B3 = symbols('E1:4 B1:4')
         >>> em = [[0, -E1, -E2, -E3],
@@ -180,10 +180,10 @@ class Tensor(AbstractTensor, TensorHead):
         >>> F = Tensor('F', em, eta, symmetry=[[2]])
         >>> mu, nu = indices('mu nu', eta)
         >>> expr = F(mu, nu) + F(nu, mu)
-        >>> expand_tensor(expr)
+        >>> expand_array(expr)
         0
         >>> expr = F(mu, nu) * F(-mu, -nu)
-        >>> expand_tensor(expr)
+        >>> expand_array(expr)
         2*B_1**2 + 2*B_2**2 + 2*B_3**2 - 2*E_1**2 - 2*E_2**2 - 2*E_3**2
 
         """
@@ -292,9 +292,9 @@ class Index(TensorIndex):
         return Index(self.name, self.tensor_index_type, (not self.is_up))
 
 
-def expand_tensor(expr, idxs=None):
+def expand_array(expr, idxs=None):
     """
-    Evaluate a tensor expression and return the resulting array.
+    Evaluate a tensor expression and return the result as an array.
 
     Parameters
     ----------
@@ -307,6 +307,31 @@ def expand_tensor(expr, idxs=None):
     if idxs is None:
         idxs = TensMul(expr).get_free_indices()
     return expr.replace_with_arrays(ReplacementManager, idxs)
+
+
+def expand_tensor(symbol, expr, metric, idxs=None, **kwargs):
+    """
+    Evaluate a tensor expression and return the result as a tensor.
+
+    Parameters
+    ----------
+    symbol : str
+        Name of the tensor and the symbol to denote it by when printed.
+    expr : TensExpr
+        Symbolic expression of tensors.
+    metric : Metric
+        Classify the tensor as being defined in terms of a metric.
+    idxs : TensorIndex
+        Indices that encode the covariance and contravariance of the result.
+
+    """
+    result = expand_array(expr, idxs)
+    if not isinstance(result, Array):
+        return result
+    if idxs is None:
+        idxs = TensMul(expr).get_free_indices()
+    covar = [1 if idx.is_up else -1 for idx in idxs]
+    return Tensor(symbol, result, metric, covar=covar, **kwargs)
 
 
 def indices(s, metric, is_up=True):
