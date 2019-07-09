@@ -333,6 +333,7 @@ def expand_tensor(symbol, expr, metric, idxs=None, **kwargs):
     covar = [1 if idx.is_up else -1 for idx in idxs]
     return Tensor(symbol, result, metric, covar=covar, **kwargs)
 
+
 def indices(s, metric, is_up=True):
     """
     Create indices using a method similar to ~sympy.symbols.

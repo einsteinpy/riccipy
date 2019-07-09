@@ -1,8 +1,7 @@
-from sympy import Array, diag, eye, simplify, sin, symbols
-from sympy.tensor.tensor import TensExpr, TensMul
-
 from riccipy.metric import *
 from riccipy.tensor import *
+from sympy import Array, diag, eye, simplify, sin, symbols
+from sympy.tensor.tensor import TensExpr, TensMul
 
 
 def _generate_simple():
@@ -148,10 +147,11 @@ def test_expand_array():
         - ph ** 2 * r ** 2 * sin(th) ** 2
     )
 
+
 def test_expand_tensor():
     (coords, t, r, th, ph, schw, g, mu, nu) = _generate_schwarzschild()
-    res = expand_tensor('t', g(-mu, -nu)*g(mu, nu), g)
+    res = expand_tensor("t", g(-mu, -nu) * g(mu, nu), g)
     assert not isinstance(res, TensExpr)
-    res = expand_tensor('T', g(mu, nu), g)
+    res = expand_tensor("T", g(mu, nu), g)
     assert isinstance(res, Tensor)
     assert schw.inv().equals(res.as_array())
