@@ -292,9 +292,9 @@ class Index(TensorIndex):
         return Index(self.name, self.tensor_index_type, (not self.is_up))
 
 
-def expand_tensor(expr, idxs=None):
+def expand_array(expr, idxs=None):
     """
-    Evaluate a tensor expression and return the resulting array.
+    Evaluate a tensor expression and return the result as an array.
 
     Parameters
     ----------
@@ -308,6 +308,26 @@ def expand_tensor(expr, idxs=None):
         idxs = TensMul(expr).get_free_indices()
     return expr.replace_with_arrays(ReplacementManager, idxs)
 
+
+def expand_tensor(symbol, expr, idxs=None):
+    """
+    Evaluate a tensor expression and return the result as a tensor.
+
+    Parameters
+    ----------
+    expr : TensExpr
+        Symbolic expression of tensors.
+    idxs : TensorIndex
+        Indices that encode the covariance and contravariance of the result.
+
+    """
+    result = expand_array(expr, idxs)
+    if not isinstance(result, Array):
+        return result
+    if idxs is None:
+        idxs = TensMul(expr).get_free_indices()
+    covar = [1 if idx.is_up else -1 for idx in idxs]
+    return Tensor(symbol, result, result.index_types[0], covar=covar)
 
 def indices(s, metric, is_up=True):
     """
