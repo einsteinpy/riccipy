@@ -1,8 +1,7 @@
-from sympy import Array, diag, eye, simplify, sin, symbols
-from sympy.tensor.tensor import TensExpr, TensMul
-
 from riccipy.metric import *
 from riccipy.tensor import *
+from sympy import Array, diag, eye, simplify, sin, symbols
+from sympy.tensor.tensor import TensExpr, TensMul
 
 
 def _generate_simple():
@@ -101,10 +100,6 @@ def test_IndexedTensor():
     T = Tensor("T", coords, metric)
     mu = Index("mu", metric)
     assert isinstance(T(mu), IndexedTensor)
-
-
-def test_ReplacementManager():
-    pass
 
 
 def test_expand_tensor():
