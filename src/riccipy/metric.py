@@ -1,4 +1,5 @@
 from collections import namedtuple
+from pathlib import Path
 
 from sympy import Array, Pow, Rational, S, ones, tensorproduct, zeros
 from sympy.tensor.tensor import TensorIndexType
@@ -256,3 +257,11 @@ class SpacetimeMetric(Metric):
         sig = sign * ones(1, self.dim)
         sig[0] *= -1
         return tuple(sig)
+
+
+def load_metric(symbol, name):
+    base = Path(__file__).parent
+    var = dict(globals(), **locals())
+    with open(base / "metrics" / (name + ".py"), "r") as file:
+        exec(file.read(), var)
+        return SpacetimeMetric(symbol, var["coords"], var["metric"], timelike=False)
