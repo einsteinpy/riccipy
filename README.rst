@@ -26,8 +26,8 @@
 .. |circleci| image:: https://img.shields.io/circleci/project/github/einsteinpy/riccipy/master.svg?style=flat-square&logo=circleci
    :target: https://circleci.com/gh/einsteinpy/riccipy
 
-.. |codecov| image:: https://img.shields.io/codecov/c/github/einsteinpy/einsteinpy.svg?style=flat-square
-   :target: https://codecov.io/github/einsteinpy/einsteinpy?branch=master
+.. |codecov| image:: https://img.shields.io/codecov/c/github/einsteinpy/riccipy.svg?style=flat-square
+   :target: https://codecov.io/github/einsteinpyriccipy?branch=master
 
 .. |appveyor| image:: https://img.shields.io/appveyor/ci/shreyasbapat/einsteinpy.svg?logo=appveyor&style=flat-square
    :target: https://ci.appveyor.com/project/shreyasbapat/einsteinpy
