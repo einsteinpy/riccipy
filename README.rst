@@ -36,7 +36,7 @@
 :Website: https://riccipy.einsteinpy.org/
 :Version: 0.1.dev0
 
-|astropy| |mailing| |gitter| |riotchat| |license| |docs|
+|mailing| |gitter| |riotchat| |license| |docs|
 
 |circleci| |travisci| |appveyor| |codecov| |codeclimate|
 
