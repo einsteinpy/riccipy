@@ -1,19 +1,7 @@
 .. riccipy
 
-.. image:: https://blog.einsteinpy.org/img/logo.png
-   :target: https://einsteinpy.org/
-   :alt: EinsteinPy logo
-   :width: 675px
-   :align: center
-
-.. |astropy| image:: http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat-square
-   :target: http://www.astropy.org/
-
 .. |mailing| image:: https://img.shields.io/badge/mailing%20list-groups.io-8cbcd1.svg?style=flat-square
    :target: https://groups.io/g/einsteinpy-dev
-
-.. |doi| image:: https://zenodo.org/badge/168302584.svg?style=flat-square
-   :target: https://zenodo.org/badge/latestdoi/168302584
 
 .. |gitter| image:: https://img.shields.io/gitter/room/EinsteinPy-Project/EinsteinPy.svg?logo=gitter&style=flat-square
    :alt: Join the chat at https://gitter.im/EinsteinPy-Project/EinsteinPy
@@ -23,29 +11,26 @@
    :target: https://riot.im/app/#/room/#einsteinpy:matrix.org
 
 .. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-   :target: https://github.com/einsteinpy/einsteinpy/raw/master/COPYING
+   :target: https://github.com/einsteinpy/riccipy/raw/master/COPYING
 
 .. |docs| image:: https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat-square
-   :target: https://docs.einsteinpy.org/en/latest/?badge=latest
+   :target: https://docs.riccipy.einsteinpy.org/en/latest/?badge=latest
 
-.. |travisci| image:: https://img.shields.io/travis/einsteinpy/einsteinpy/master.svg?style=flat-square&logo=travis
-   :target: https://travis-ci.org/einsteinpy/einsteinpy
+.. |travisci| image:: https://img.shields.io/travis/einsteinpy/riccipy/master.svg?style=flat-square&logo=travis
+   :target: https://travis-ci.org/einsteinpy/riccipy
 
-.. |codeclimate| image:: https://img.shields.io/codeclimate/maintainability/einsteinpy/einsteinpy.svg?logo=code-climate&style=flat-square
-   :target: https://codeclimate.com/github/einsteinpy/einsteinpy/maintainability
+.. |codeclimate| image:: https://img.shields.io/codeclimate/maintainability/einsteinpy/riccipy.svg?logo=code-climate&style=flat-square
+   :target: https://codeclimate.com/github/einsteinpy/riccipy/maintainability
    :alt: Maintainability
 
-.. |circleci| image:: https://img.shields.io/circleci/project/github/einsteinpy/einsteinpy/master.svg?style=flat-square&logo=circleci
-   :target: https://circleci.com/gh/einsteinpy/einsteinpy
+.. |circleci| image:: https://img.shields.io/circleci/project/github/einsteinpy/riccipy/master.svg?style=flat-square&logo=circleci
+   :target: https://circleci.com/gh/einsteinpy/riccipy
 
 .. |codecov| image:: https://img.shields.io/codecov/c/github/einsteinpy/einsteinpy.svg?style=flat-square
    :target: https://codecov.io/github/einsteinpy/einsteinpy?branch=master
 
 .. |appveyor| image:: https://img.shields.io/appveyor/ci/shreyasbapat/einsteinpy.svg?logo=appveyor&style=flat-square
    :target: https://ci.appveyor.com/project/shreyasbapat/einsteinpy
-
-.. |orcid-shreyas| image:: https://img.shields.io/badge/id-0000--0002--0870--4665-a6ce39.svg
-   :target: https://orcid.org/0000-0002-0870-4665
 
 :Name: RicciPy
 :Website: https://riccipy.einsteinpy.org/
@@ -55,50 +40,26 @@
 
 |circleci| |travisci| |appveyor| |codecov| |codeclimate|
 
-.. EinsteinPy is an open source pure Python package dedicated to problems arising in
-.. General Relativity and relativistic physics, such as geodesics calculation for vacuum
-.. solutions for Einstein's field equations, calculation of various quantities in these
-.. geometries like Schwarzschild Radius and the event horizon. The library also has functions
-.. for Symbolic calculations in GR like Christoffel Symbols and much more is planned.
-.. The library aims to solve Einstein's field equations for arbitrarily complicated
-.. matter distribution as one of the main goals.
-RicciPy is an open source package that exists as part of the EinsteinPy project for the
+
+RicciPy is an open source package that exists as part of The EinsteinPy Project for the
 purpose of providing a API that makes tensor algebra as easy as possible on arbitrary
 manifolds. RicciPy implements the use of Sympy for representing tensor equations and expressions
 symbolically with automatic applications of a metric when contracting indices. Lastly, the
 Library also provides a means for converting the results of tensor equations to numpy-like
 functions for use in numerical calculations. It is released under the MIT license.
 
-..
-   Documentation
-   =============
+Documentation
+=============
 
-   |docs|
+|docs|
 
-   Complete documentation, including a user guide and an API reference, can be read on
-   the wonderful `Read the Docs`_.
+Complete documentation, including a user guide and an API reference, can be read on
+the wonderful `Read the Docs`_.
 
-   https://docs.einsteinpy.org/
+https://doc.riccipy.einsteinpy.org/
 
-   .. _`Read the Docs`: https://readthedocs.org/
+.. _`Read the Docs`: https://readthedocs.org/
 
-..
-   Examples
-   ========
-
-   .. |mybinder| image:: https://img.shields.io/badge/launch-binder-e66581.svg?style=flat-square
-      :target: https://beta.mybinder.org/v2/gh/einsteinpy/einsteinpy/master?filepath=index.ipynb
-
-   |mybinder|
-
-   In the examples directory, you can find several Jupyter notebooks with specific
-   applications of einsteinpy. You can consider theses Jupyter Notebooks as tutorials for einsteinpy.
-   You can launch a cloud Jupyter server using `binder`_ to edit
-   the notebooks without installing anything. Try it out!
-
-   https://beta.mybinder.org/v2/gh/einsteinpy/einsteinpy/master?filepath=index.ipynb
-
-   .. _binder: https://beta.mybinder.org/
 
 Requirements
 ============
@@ -108,16 +69,6 @@ RicciPy requires the following Python packages:
 * NumPy, for basic numerical routines
 * SymPy, for symbolic calculations related to GR.
 
-RicciPy is usually tested on Linux, Windows and OS X on Python
-3.5, 3.6 and 3.7 against latest NumPy.
-
-==============  ============  ===================
-Platform        Site          Status
-==============  ============  ===================
-Linux           CircleCI      |circleci|
-OS X            Travis CI     |travisci|
-Windows x64     Appveyor      |appveyor|
-==============  ============  ===================
 
 ..
    Installation
